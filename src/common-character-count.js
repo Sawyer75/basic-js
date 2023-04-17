@@ -18,14 +18,14 @@ function getCommonCharacterCount( s1, s2 ) {
   let result = 0;
 
   // count characters in the first string
-  for (let i = 0; i < str1.length; i++) {
-    const char = str1[i];
+  for (let i = 0; i < s1.length; i++) {
+    const char = s1[i];
     count[char] = count[char] ? count[char] + 1 : 1;
   }
 
   // iterate through the second string
-  for (let i = 0; i < str2.length; i++) {
-    const char = str2[i];
+  for (let i = 0; i < s2.length; i++) {
+    const char = s2[i];
     // if the character is already counted in the first string, decrement its count
     if (count[char]) {
       count[char]--;
