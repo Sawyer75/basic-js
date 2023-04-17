@@ -14,18 +14,17 @@ const { NotImplementedError } = require('../extensions/index.js');
  *
  */
 function createDreamTeam(members) {
-if (!Array.isArray(members)) {
-return false;
-}
-let teamName = '';
-for(let i = 0; i < members.length;i++){
-if (typeof members[i] === 'string') {
-   let name = members[i].trim().toLocaleLowerCase();
-if (teamName.length > 0) {
-}
-}
-}
-return teamName.split('').sort().join('');
+   if (!Array.isArray(members)) {
+   return false;
+   }
+   let teamName = "";
+   members.forEach((member) => {
+   if (typeof member === "string") {
+   const trimmedMemberName = member.trim();
+   teamName += trimmedMemberName[0].toUpperCase();
+   }
+   });
+   return teamName.split("").sort().join("");
 }
 
 module.exports = {
